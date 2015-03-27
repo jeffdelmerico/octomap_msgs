@@ -1,7 +1,6 @@
 # Synthesize some views of a textured octomap
 
-geometry_msgs/Point[] positions
-geometry_msgs/Vector3[] orientations
+geometry_msgs/Pose[] poses
 uint32 h
 uint32 w
 float32 fx
