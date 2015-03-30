@@ -149,6 +149,11 @@ namespace octomap_msgs{
   static inline bool binaryMapToMsg(const OctomapT& octomap, Octomap& msg){
     msg.resolution = octomap.getResolution();
     msg.id = octomap.getTreeType();
+
+    // Binary message of these types is identical to plain octree 
+    if (msg.id == "OcTreeStereo" || msg.id == "TextureOcTree")
+      msg.id = "OcTree";
+    
     msg.binary = true;
     
     std::stringstream datastream;
